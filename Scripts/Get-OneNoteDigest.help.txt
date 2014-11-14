@@ -1,0 +1,67 @@
+SCRIPT
+
+    Get-OneNoteDigest
+
+SYNOPSIS
+
+    Gets a digest of pages that have changed in a OneNote notebook and
+    sends them in email.
+
+SYNTAX
+
+    Get-OneNoteDigest [-Notebook] <string> [-Container <string>]
+    [-TargetDate <datetime>] [-Stylesheet <string>] [-MailTo <string>]
+    [-MailFrom <string>] [-whatIf] [-noClean] [-verbose]
+
+DETAILED DESCRIPTION
+
+    Get-OneNoteDigest goes through a OneNote notebook and looks for
+    all pages that have changed since a particular date/time. It
+    exports those pages to MHT files, attaches them to a mail message,
+    and sends them to the specified audience.
+
+    This command requires the PowerShell Community Extensions. You can
+    download them here: http://www.codeplex.com/PowerShellCX.
+
+PARAMETERS
+
+    -Path [<System.String>]
+
+        REQUIRED. Specifies the path to the OneNote notebook to
+        monitor.
+
+    -Container [<System.String>]
+
+        This is the working directory for creating the MHT files and
+        the mail message. Defaults to ${env:temp}.
+
+    -TargetDate [<System.DateTime>]
+
+        Looks for any pages that have changed since this date & time.
+        Defaults to one day prior to the current date and time.
+
+    -Stylesheet [<System.String>]
+
+        Path to the XSLT used to create the main body of the mail
+        message. Defaults to OfficeLabsDigest.xslt in the same
+        directory as this script.
+
+    -MailTo [<System.String>]
+
+        Who to send the mail to. Defaults to
+        "${env:username}@microsoft.com".
+
+    -MailFrom [<System.String>]
+
+        Who the mail is sent from. Defaults to
+        "${env:username}@microsoft.com".
+
+    -noClean
+
+        If set, the script will avoid cleaning up the temporary
+        directory when done.
+
+SEE ALSO
+
+    about_OneNote
+    http://www.codeplex.com/PowerShellCX

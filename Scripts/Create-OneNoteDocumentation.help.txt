@@ -1,0 +1,19 @@
+SCRIPT
+
+	Create-OneNoteDocumentation
+
+SYNOPSIS
+
+	Creates a .ONEPKG file documenting the OneNote PowerShell provider
+	and related scripts.
+
+SYNTAX
+
+	Create-OneNoteDocumentation
+
+DETAILED DESCRIPTION
+
+    Create-OneNoteDocumentation creates a .onepkg file that documents
+    all of the cmdlets and sample scripts in the OneNote PowerShell
+    provider. This script itself makes a good sample script.
+

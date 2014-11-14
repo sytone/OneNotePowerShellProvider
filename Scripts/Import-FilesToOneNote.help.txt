@@ -1,0 +1,41 @@
+SCRIPT
+
+    Import-FilesToOneNote
+
+SYNOPSIS
+
+    Imports files into a OneNote section.
+
+SYNTAX
+
+    Import-FilesToOneNote [-OneNotePath] <string> [-FileSpec] <string>
+    [-embed] [-SubstituteContentExtension <string>]
+
+DETAILED DESCRIPTION
+
+    Import-FilesToOneNote imports files into a OneNote section. It
+    creates a page per file on the section. The contents of the file
+    are placed on the page. Optionally, the file may be embedded in
+    the page as well.
+
+    One option that is useful for embedding scripts into the page is
+    to look for a "substitute file" to provide the page content that
+    is different from the file that gets embedded. You can then embed
+    a .PS1 file, yet include content of the .HELP.TXT file.
+
+PARAMETERS
+
+    -OneNotePath <String>
+
+        The PowerShell path to a OneNote section.
+
+    -FileSpec <string>
+
+        The files to import. Wildcards are allowed.
+
+    -embed
+
+        If present, the file will get embedded into the page.
+
+    -SubstituteContentExtension <string>
+

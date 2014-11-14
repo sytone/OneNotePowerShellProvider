@@ -1,0 +1,151 @@
+PROVIDER NAME
+
+    Microsoft.Office.OneNote
+    
+DRIVES
+
+    OneNote:
+    
+SYNOPSIS
+
+    The PowerShell provider for manipulating OneNote notebooks.
+    
+DETAILED DESCRIPTION
+
+    The Windows PowerShell OneNote provider lets you create and
+    manipulate OneNote notebooks, sections, and pages. You can add
+    content to pages.
+
+    To have access to the OneNote provider, you should run the
+    Enable-OneNote script. This will add the provider snapin to your
+    PowerShell session and update the PowerShell formatting
+    information to do custom formatting of OneNote objects. You need
+    to run Enable-OneNote each time you start PowerShell, so it is a
+    good candidate to put in your profile.
+
+TASKS
+
+    TASK: Navigate through your notebooks.
+
+        You can see your currently open notebooks by using the
+        OneNote: drive.
+
+        --------------- EXAMPLE 1 ---------------
+
+        dir OneNote:
+
+    TASK: Create notebook structure.
+
+        You can create notebooks, sections, and pages with the
+        new-item cmdlet.
+
+        --------------- EXAMPLE 1 ---------------
+
+        new-item -path onenote:\TempNotebook -type Notebook -value "$(gc env:\temp)"
+        new-item -path OneNote:\TempNotebook\Section -type section
+        new-item -path "OneNote:\TempNotebook\Section\Page 1" -type page
+        new-item -path "OneNote:\TempNotebook\Section\Page 2" -type page
+        new-item -path "OneNote:\TempNotebook\Section\Page 3" -type page
+        new-item -path "OneNote:\TempNotebook\Section 2" -type section
+
+        --------------- EXAMPLE 2 ---------------
+
+        Note that relative paths work, and you can abbreviate type
+        names.
+
+        pushd "OneNote:\TempNotebook\Section 2"
+        new-item -path ".\Page 1" -type p
+        new-item -path ".\Foobar" -type p
+        new-item -path ".\Razzle" -type p
+        new-item -path OneNote:\TempNotebook\Foo -type section
+        dir OneNote:\TempNotebook -recurse
+        popd
+        
+        --------------- EXAMPLE 3 ---------------
+
+        Because forward slashes and back slashes are used as path
+        separators, and ':' is the drive separator, you need to escape
+        them when using them in the names of pages, sections, etc.
+
+        new-item -path "onenote:\tempnotebook\section\either&#47;or" -type page
+        new-item -path "onenote:\tempNotebook\section\C&#58;&#92;Users&#92;BDewey" -type page
+
+    TASK: Adding content to OneNote pages.
+
+        You can use the Add-Content and Set-Content cmdlets to add
+        content to OneNote pages.
+
+        --------------- EXAMPLE 1 ---------------
+
+        get-process | out-string | add-content "onenote:\TempNotebook\Section\Page 1"
+
+
+        --------------- EXAMPLE 2 ---------------
+
+        If you pipe FileInfo objects to add-content, then the file
+        will be embedded in the page.
+
+        dir $PSHome\Documents\EN-US\GettingStarted.rtf | add-content "OneNote:\TempNotebook\Section\Page 2"
+
+
+
+    
+CMDLETS SUPPORTED
+
+    The OneNote provider supports the following cmdlets.
+
+    New-Item
+
+        Creates new Notebooks, Sections, or Pages.
+
+    Clear-Item
+
+        Closes notebooks.
+
+    Add-Content
+
+        Adds string or FileInfo objects to notebook pages.
+
+    Set-Content
+
+        Deletes the existing content of a page and sets the page
+        content to the string or FileInfo object.
+
+    Get-Item
+
+        Gets the named OneNote item (Notebook, Section, SectionGroup,
+        or Page).
+
+    Get-ChildItem
+
+        Gets the children of a OneNote item.
+
+    Get-Content
+
+        Gets the XML representing a OneNote page.
+
+    Test-Path
+
+        Determines if the given string is a valid path to a OneNote
+        item.
+
+    Remove-Item
+
+        Deletes OneNote content.
+
+NOTES
+
+    - The new-item cmdlet cannot create Section Groups.
+    - There is no way to access the OpenSections group.
+
+RELATED LINKS
+
+    Enable-OneNote
+    Export-OneNote
+    Get-OneNoteHyperlink
+    Get-OneNoteHierarchy
+    Get-OneNoteTOC
+    Get-PageContent
+    Open-OneNote
+    Close-OneNote
+    Set-PageContent

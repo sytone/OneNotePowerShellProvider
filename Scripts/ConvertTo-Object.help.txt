@@ -1,0 +1,22 @@
+SCRIPT
+
+    ConvertTo-Object
+
+SYNOPSIS
+
+    Converts hashtables to objects.
+
+DESCRIPTION
+
+    ConvertTo-Object converts any hashtable to an object. The keys of
+    the hashtable become the property names of the object. This script
+    is useful when paired with the output of Export-PsOn, which tends
+    to serialize complex items as hashtables.
+
+SYNTAX
+
+    ConvertTo-Object
+
+RELATED LINKS
+
+    Export-PsOn

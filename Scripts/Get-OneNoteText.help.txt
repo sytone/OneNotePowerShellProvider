@@ -1,0 +1,29 @@
+SCRIPT
+
+    Get-OneNoteText
+
+SYNOPSIS
+
+    Gets the text off of a OneNote page.
+
+SYNTAX
+
+    Get-OneNoteText [[-OneNotePath] <string>] [-Stylesheet <string>]
+
+DETAILED DESCRIPTION
+
+    Get-OneNoteText gets just the text from a OneNote page. This is
+    frequently more useful than the output of Get-Content.
+
+PARAMETERS
+
+    -OneNotePath <string>
+
+        The path to the OneNote page to get.
+
+    -Stylesheet <string>
+
+        The path to the XSLT stylesheet used to convert the OneNote
+        page to text.
+
+RELATED LINKS

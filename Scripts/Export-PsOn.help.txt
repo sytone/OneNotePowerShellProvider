@@ -1,0 +1,56 @@
+SCRIPT
+
+    Export-PsOn
+
+SYNOPSIS
+
+    Exports objects in "PowerShell Object Notation" -- similar in
+    concept to "JSON" (JavaScript Object Notation).
+
+DETAILED DESCRIPTION
+
+    This script exports objects in "PowerShell Object Notation". You
+    can simply execute the resulting script to reconstitute the
+    objects.
+
+SYNTAX
+
+    Export-PsOn [[-path] <string>] [[-encoding] <string>] [-passThru]
+    [-stdout]
+
+PARAMETERS
+
+    -path <System.String>
+
+        The output path to write the exported file to.
+
+    -encoding <System.String>
+
+        The encoding to use when writing to the output file. The
+        default encoding is ASCII.
+
+    -passThru
+
+        If set, the objects are passed down the pipeline.
+
+    -stdout
+
+        If set, the output is written to the console.
+
+NOTES
+
+    Export-PsOn can export the following types:
+
+        System.String
+        System.DateTime
+        System.Boolean
+        System.Management.Automation.ScriptBlock
+        System.Int32
+        System.Double
+        System.Collections.Hashtable
+        System.Object[]
+        System.Xml.XmlElement
+
+SEE ALSO
+
+    about_OneNote

@@ -1,0 +1,77 @@
+SCRIPT
+
+    Start-Tests
+
+SYNOPSIS
+
+    Executes a series of test cases.
+
+SYNTAX
+
+    Start-Tests [-Filter <string>] [-Encoding <string>]
+    [-OnlyFilteredTests] [-Transcript]
+
+DETAILED DESCRIPTION
+
+    Start-Tests executes a series of test cases. As input, the script
+    expects a series of hashtables that contain at least the following
+    keys:
+
+        Name <String>
+
+            REQUIRED. The name of the test.
+
+        ScriptBlock <ScriptBlock>
+
+            REQUIRED. The code to execute for the test.
+
+        ValidateError <ScriptBlock>
+
+            OPTIONAL. If present, this script block will be called to
+            determine if any errors that result from executing
+            ScriptBlock are valid.
+
+        ExpectedString <String>
+
+            OPTIONAL. If present, the output from executing
+            ScriptBlock are compared to this string. It is an error if
+            it is not an exact match.
+
+        Validate <ScriptBlock>
+
+            OPTIONAL. If present, the output from executing
+            ScriptBlock are piped to this scriptblock for validation.
+
+        Filter <String>
+
+            This value can be used to control which tests execute.
+            Tests that contain a Filter key will run only if a string
+            matching that key is used on the Start-Tests command line.
+
+PARAMETERS
+
+    -Filter <String>
+
+        If present, tests that contain a Filter key that match this
+        parameter will be executed.
+
+    -OnlyFilteredTests
+
+        If present, only tests that have a Filter key will be
+        executed. That filter key must still match the Filter
+        parameter.
+
+    -Transcript
+
+        If present, a transcript of all tests that are executed and
+        their output will be created in a file called
+        "transcript.ps1."
+
+    -Encoding <string>
+
+        The encoding to use for the transcript. The default is ASCII.
+
+
+RELATED LINKS
+
+    Get-ProviderTests

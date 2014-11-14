@@ -1,0 +1,24 @@
+SCRIPT
+
+	Get-ProviderTests
+
+SYNOPSIS
+
+	Returns a series of test cases that exercise the major
+	functionality of the OneNote provider.
+
+SYNTAX
+
+	Get-ProviderTests
+
+DETAILED DESCRIPTION
+
+    Get-ProviderTests returns a series of test cases for the major
+    functionality of the OneNote provider. Use this in conjunction
+    with the Start-Tests script to verify that things work on your
+    computer.
+
+RELATED LINKS
+
+	Start-Tests
+

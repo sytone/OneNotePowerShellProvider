@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+
+    <SelectionSets>
+        <SelectionSet>
+            <Name>OneNoteTypes</Name>
+            <Types>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Notebook</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Section</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#SectionGroup</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Page</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#UnfiledNotes</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#OpenSections</TypeName>
+            </Types>
+        </SelectionSet>
+    </SelectionSets>
+
+    <Controls>
+        <Control>
+            <Name>OneNoteTypes-GroupingFormat</Name>
+            <CustomControl>
+                <CustomEntries>
+                    <CustomEntry>
+                        <CustomItem>
+                            <Frame>
+                                <LeftIndent>4</LeftIndent>
+                                <CustomItem>
+                                    <ExpressionBinding>
+                                        <ScriptBlock>$_.get_ParentNode().get_LocalName() + ": " + 
+                                            $_.get_ParentNode().name</ScriptBlock>
+                                    </ExpressionBinding>
+                                    <ExpressionBinding>
+                                        <ScriptBlock>
+                                            if ($_.get_ParentNode().path) { 
+                                                " (" + $_.get_ParentNode().path + ")" 
+                                            }
+                                        </ScriptBlock>
+                                    </ExpressionBinding>
+                                    <NewLine/>
+                                </CustomItem>
+                            </Frame>
+                        </CustomItem>
+                    </CustomEntry>
+                </CustomEntries>
+            </CustomControl>
+        </Control>
+    </Controls>
+
+    <ViewDefinitions>
+        <View>
+            <Name>OneNote view</Name>
+            <ViewSelectedBy>
+                <SelectionSetName>OneNoteTypes</SelectionSetName>
+            </ViewSelectedBy>
+            <GroupBy>
+                <PropertyName>PSParentPath</PropertyName>
+                <CustomControlName>OneNoteTypes-GroupingFormat</CustomControlName>
+            </GroupBy>
+            <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Type</Label>
+                        <Width>12</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>lastModifiedTime</Label>
+                        <Width>22</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Name</Label>
+                    </TableColumnHeader>
+                </TableHeaders>
+
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <ScriptBlock>
+                                    $_.PSObject.BaseObject.ToString( )
+                                </ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>
+                                    $dt = [datetime]::Parse( $_.lastModifiedTime )
+                                    '{0,10} {1,8}' -f $dt.ToString( "d" ), $dt.ToString( "t" )
+                                </ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>name</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>

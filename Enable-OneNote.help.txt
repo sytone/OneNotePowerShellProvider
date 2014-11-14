@@ -1,0 +1,33 @@
+SCRIPT
+
+	Enable-OneNote
+
+SYNOPSIS
+
+	Enables the OneNote PowerShell provider for the current PowerShell
+	instance.
+
+SYNTAX
+
+	Enable-OneNote [-silent]
+
+DETAILED DESCRIPTION
+
+	Enable-OneNote performs two tasks: It adds the
+	Microsoft.Office.OneNote snapin to the current PowerShell
+	instance, and it updates the PowerShell format data to do custom
+	formatting of OneNote objects. You need to run Enable-OneNote in
+	each PowerShell window you want to use to access OneNote
+	functionality.
+
+PARAMETERS
+
+	-silent
+
+		If present, this supresses displaying the file version
+		information of the OneNote PowerShell DLLs.
+
+RELATED LINKS
+
+	about_OneNote
+
