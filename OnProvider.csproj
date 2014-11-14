@@ -8,8 +8,8 @@
     <ProjectGuid>{83A9B14D-7147-4171-B001-835FFC188272}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Office.OneNote.Commands</RootNamespace>
-    <AssemblyName>Microsoft.Office.OneNote.Commands</AssemblyName>
+    <RootNamespace>Microsoft.Office.OneNote.PowerShell</RootNamespace>
+    <AssemblyName>Microsoft.Office.OneNote.PowerShell</AssemblyName>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -69,21 +69,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContentWriter.cs" />
-    <Compile Include="ExportOneNote.cs" />
-    <Compile Include="GetHyperlink.cs" />
-    <Compile Include="GetOneNoteHierarchy.cs" />
-    <Compile Include="GetOneNoteTOC.cs" />
-    <Compile Include="GetPageContent.cs" />
-    <Compile Include="ContentReader.cs" />
-    <Compile Include="OpenCloseOneNote.cs" />
-    <Compile Include="OneNoteProvider.cs" />
+    <Compile Include="Commands\ExportOneNote.cs" />
+    <Compile Include="Commands\GetHyperlink.cs" />
+    <Compile Include="Commands\GetOneNoteHierarchy.cs" />
+    <Compile Include="Commands\GetOneNoteTOC.cs" />
+    <Compile Include="Commands\GetPageContent.cs" />
+    <Compile Include="Commands\OpenCloseOneNote.cs" />
+    <Compile Include="Commands\SetPageContent.cs" />
     <Compile Include="OneNoteSnapIn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="OneNoteXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetPageContent.cs" />
+    <Compile Include="Provider\ContentReader.cs" />
+    <Compile Include="Provider\ContentWriter.cs" />
+    <Compile Include="Provider\OneNoteProvider.cs" />
+    <Compile Include="Provider\OneNoteXml.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
