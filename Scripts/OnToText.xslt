@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <xsl:stylesheet version="1.0"
-    xmlns:one="http://schemas.microsoft.com/office/onenote/2007/onenote"
+    xmlns:one="http://schemas.microsoft.com/office/onenote/2013/onenote"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output method="text" />

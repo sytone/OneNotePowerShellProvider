@@ -5,12 +5,12 @@
         <SelectionSet>
             <Name>OneNoteTypes</Name>
             <Types>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Notebook</TypeName>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Section</TypeName>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#SectionGroup</TypeName>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Page</TypeName>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#UnfiledNotes</TypeName>
-                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#OpenSections</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#Notebook</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#Section</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#SectionGroup</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#Page</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#UnfiledNotes</TypeName>
+                <TypeName>System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#OpenSections</TypeName>
             </Types>
         </SelectionSet>
     </SelectionSets>

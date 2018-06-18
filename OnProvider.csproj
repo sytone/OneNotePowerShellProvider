@@ -19,7 +19,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -63,9 +63,8 @@
       <HintPath>C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
-    <Reference Include="WebNotebook, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\OneNoteToRSS\OneNoteConverter\bin\Release\WebNotebook.dll</HintPath>
+    <Reference Include="WebNotebook">
+      <HintPath>Refs\WebNotebook.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -86,14 +85,15 @@
     <Compile Include="Provider\OneNoteXml.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
-  <ItemGroup>
+    <ItemGroup>
     <COMReference Include="Microsoft.Office.Interop.OneNote">
-      <Guid>{F2A7EE29-8BF6-4A6D-83F1-098E366C709C}</Guid>
+      <Guid>{0EA692EE-BB50-4E3C-AEF0-356D91732725}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
+      <VersionMinor>1</VersionMinor>
       <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <ItemGroup>
@@ -180,18 +180,6 @@
     <Content Include="Scripts\start-tests.help.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
