@@ -20,7 +20,7 @@ if (!$OneNotePath)
 ##
 
 $i = Get-Item $OneNotePath
-if ($i.PSObject.TypeNames[0] -ne 'System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2007/onenote#Page')
+if ($i.PSObject.TypeNames[0] -ne 'System.Xml.XmlElement#http://schemas.microsoft.com/office/onenote/2013/onenote#Page')
 {
 	 Get-Content $OneNotePath
 	 return
