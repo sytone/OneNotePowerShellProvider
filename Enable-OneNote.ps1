@@ -26,7 +26,7 @@ if (!$silent -and $(test-command "Get-FileVersionInfo"))
 }
 
 
-Add-PSSnapin Microsoft.Office.OneNote
+Import-Module "$($OneNoteHome)\Microsoft.Office.OneNote.PowerShell.dll"
 Update-FormatData "$($OneNoteHome)\OneNote.ps1xml"
 $global:OneNoteHome = $OneNoteHome
 

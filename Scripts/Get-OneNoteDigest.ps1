@@ -195,7 +195,7 @@ Convert-Xml -Path "$outputDirectory\manifest.xml" -XsltPath $Stylesheet > `
 ##  Send the mail message.
 ##
 
-$body = gc "$outputDirectory\manifest.htm" | join-string -newline
+$body = gc "$outputDirectory\manifest.htm" -Raw
 if (!$whatIf)
 {
 	 Send-SmtpMail -to $MailTo -from bdewey@exchange.microsoft.com -subject "$notebookName Digest" `
