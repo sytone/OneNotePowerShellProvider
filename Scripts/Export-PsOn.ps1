@@ -10,6 +10,8 @@ param( $path, $encoding = 'ASCII', [switch]$passThru, [switch]$stdout )
 
 begin
 {
+	 Set-StrictMode -Off
+
 	 if ($args[0] -eq "-?")
 	 {
 		  Get-Content $(Get-Command Export-PsOn.help.txt).Definition

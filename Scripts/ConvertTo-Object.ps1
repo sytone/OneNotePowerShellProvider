@@ -5,6 +5,8 @@
 
 begin
 {
+	 Set-StrictMode -Off
+
 	 if ($args[0] -eq '-?')
 	 {
 		  get-content $(get-command ConvertTo-Object.help.txt).Definition

@@ -13,6 +13,7 @@ param( $Filter,
 
 begin
 {
+	 Set-StrictMode -Off
 
 	 if ($args[0] -eq "-?")
 	 {

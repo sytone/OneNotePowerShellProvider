@@ -5,6 +5,8 @@
 
 param([switch]$silent)
 
+Set-StrictMode -Off
+
 if ($args[0] -eq "-?")
 {
 	 Get-Content $(Get-Command Enable-OneNote.help.txt).Definition

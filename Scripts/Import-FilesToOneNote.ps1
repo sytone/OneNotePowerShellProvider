@@ -9,6 +9,8 @@ param(
      $SubstituteContentExtension
      )
 
+Set-StrictMode -Off
+
 if ($args[0] -eq "-?")
 {
 	 Get-Content $(Get-Command Import-FilesToOneNote.help.txt).Definition

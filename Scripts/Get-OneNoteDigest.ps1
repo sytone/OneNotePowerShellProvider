@@ -14,6 +14,8 @@ param( $Notebook,
     [switch]$noClean,
     [switch]$Verbose )
 
+Set-StrictMode -Off
+
 if ($args[0] -eq '-?')
 {
 	 Get-Content $(Get-Command Get-OneNoteDigest.help.txt).Definition

@@ -4,6 +4,8 @@
 
 param( $OneNotePath, $Stylesheet )
 
+Set-StrictMode -Off
+
 if ($args[0] -eq "-?")
 {
 	 Get-Content $(Get-Command Get-OneNoteText.help.txt).Definition
