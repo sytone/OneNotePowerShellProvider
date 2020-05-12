@@ -91,7 +91,7 @@ If you pipe a FileInfo object to add-content, then the file will be embedded on 
      ScriptBlock={
 
 
-            dir $PSHome\Documents\EN-US\GettingStarted.rtf | add-content "OneNote:\TempNotebook\Section\Page 2"
+            dir "$env:SystemRoot\System32\oobe\en-US\privacy.rtf" | add-content "OneNote:\TempNotebook\Section\Page 2"
             type "OneNote:\TempNotebook\Section\Page 2"
         
 

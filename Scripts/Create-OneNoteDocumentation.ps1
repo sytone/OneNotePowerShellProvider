@@ -4,6 +4,8 @@
 ##  is then exported to a ONEPKG file.
 ##
 
+Set-StrictMode -Off
+
 if ($args[0] -eq '-?')
 {
 	 Get-Content $(Get-Command Create-OneNoteDocumentation.help.txt).Definition

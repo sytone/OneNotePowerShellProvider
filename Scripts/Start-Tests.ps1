@@ -13,6 +13,7 @@ param( $Filter,
 
 begin
 {
+	 Set-StrictMode -Off
 
 	 if ($args[0] -eq "-?")
 	 {
@@ -126,7 +127,7 @@ process
 			   break
 		  }
 	 }
-	 $resultString = $results | out-string | join-string -newline
+	 $resultString = $results | out-string
 	 $resultString = $resultString.Trim()
 	 write-host "`n", $resultString, "`n" -sep $null
 	 if ($_.ExpectedString)
