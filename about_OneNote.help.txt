@@ -47,6 +47,7 @@ TASKS
         new-item -path "OneNote:\TempNotebook\Section\Page 2" -type page
         new-item -path "OneNote:\TempNotebook\Section\Page 3" -type page
         new-item -path "OneNote:\TempNotebook\Section 2" -type section
+        new-item -path "OneNote:\TempNotebook\SectionGroup1" -type group
 
         --------------- EXAMPLE 2 ---------------
 
